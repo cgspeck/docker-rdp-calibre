@@ -40,6 +40,11 @@ If you would like to change the library location you need to do a couple of thin
 - Add an environment variable (URLPREFIX) to docker run to specify the url prefix for the webserver. Example: -e URLPREFIX="/calibre"
 - To access the webserver, go to http://SERVERIP:YYYY/calibre
 
+#### Setting the User ID and Group ID of the Calibre Process
+- This is useful when you use a custom library location, to make the UID and GID of calibre match the owner/group of that path
+- Add an environment variable USER_ID and GROUP_ID, e.g. `-e USER_ID=503 -e GROUP_ID=101`
+- The default USER_ID is 99 and GROUP_ID is 100
+
 ### Changelog:
 - 2016-09-16 - Remove X1-lock if exists, which prevents start up following an unclean shutdown
 - 2016-09-15 - Updated base to x11rdp1.3, which now supports clipboard through the left hand side menu (ctrl+alt+shift) - calibre updated to 2.67
