@@ -1,11 +1,10 @@
 # Calibre GUI and Server
 
-Run the Calibre X app accessible in a web browser
+Run the Calibre X app accessible in a web browser.
 
 ## Install On unRaid:
 
 On unRaid, install from the Community Repositories and enter the app folder location and the port for the webUI.
-
 
 ## Install On Other Platforms (like Ubuntu, Synology 5.2 DSM, etc.):
 
@@ -31,13 +30,14 @@ You can access the Calibre webserver by pointing your web browser to http://SERV
 (Replace SERVERIP, XXXX and YYYY with your values)
 
 ### Advanced Features (only for docker pros)
-#### (Deprecated)Custom library location:
+
+#### Custom library location:
 If you would like to change the library location you need to do a couple of things:
 - First add a new mount point for the library location in the docker run command. Example: -v /path/to/library:/library:rw
 - Then add an environment variable (LIBRARYINTERNALPATH) to specify the internal library location for the webserver. Example: -e LIBRARYINTERNALPATH="/library"
 - When you fire up calibre the first time select your library location. Example: /library  
 
-#### (Deprecated)Url Prefix for reverse proxy:
+#### Url Prefix for reverse proxy:
 - Add an environment variable (URLPREFIX) to docker run to specify the url prefix for the webserver. Example: -e URLPREFIX="/calibre"
 - To access the webserver, go to http://SERVERIP:YYYY/calibre
 
@@ -47,6 +47,7 @@ If you would like to change the library location you need to do a couple of thin
 - The default USER_ID is 99 and GROUP_ID is 100
 
 ### Changelog:
-+ **2017-06-24:** LIBRARYINTERNALPATH and URLPREFIX variables are deprecated. They were required for the calibre webserver. The new webserver should be enabled from the calibre gui under Preferences/Sharing over the net. **Port has to be set to 8081**
++ **2019-01-05:** Exposed CalibreCompanion ("Wireless device connection") on its default port of `9090`
++ **2017-02-18:** Forked from [aptalca/docker-rdp-calibre](https://github.com/aptalca/docker-rdp-calibre/) and fixed `firstrun.sh` so that `LIBRARYINTERNALPATH` is respected.
 + **2016-09-16:** Remove X1-lock if exists, which prevents start up following an unclean shutdown
 + **2016-09-15:** Updated base to x11rdp1.3, which now supports clipboard through the left hand side menu (ctrl+alt+shift) - calibre updated to 2.67
