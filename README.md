@@ -1,3 +1,7 @@
+**This repository is deprecated and automated Docker builds have been disabled, the final version being 3.x.**
+
+**Calibre 4 has been released, use [linuxserver/calibre](https://hub.docker.com/r/linuxserver/calibre) instead and select library/metadata location on first startup.**
+
 # Calibre GUI and Server
 
 Run the Calibre X app accessible in a web browser.
@@ -11,7 +15,7 @@ On unRaid, install from the Community Repositories and enter the app folder loca
 On other platforms, you can run this docker with the following command:
 
 ```
-docker run -d --name="RDP-Calibre" -e EDGE="0" -e WIDTH="1280" -e HEIGHT="720" -v /path/to/config:/config:rw -e TZ=America/New_York -p XXXX:8080 -p YYYY:8081 aptalca/docker-rdp-calibre
+docker run -d --name="RDP-Calibre" -e EDGE="0" -e WIDTH="1280" -e HEIGHT="720" -v /path/to/config:/config:rw -e TZ=America/New_York -p XXXX:8080 -p YYYY:8081 cgspeck/docker-rdp-calibre
 ```
 
 ### Setup Instructions
